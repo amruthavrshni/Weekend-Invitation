@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weekend Refresh Invitation</title>
+  <style>
+    :root {
+      --primary: #00b894;
+      --accent: #0984e3;
+      --bg: #f0fff8;
+      --text: #2d3436;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(to right, #c0fefc, #e0f7fa);
+    }
+
+    header h1 {
+      font-size: 44px;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 20px;
+    }
+
+    .hero-img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+    }
+
+    .details {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .details h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .details p {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .countdown {
+      font-size: 22px;
+      margin-top: 20px;
+      font-weight: bold;
+      color: var(--accent);
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .gallery img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .rsvp {
+      background-color: white;
+      padding: 60px 20px;
+      max-width: 600px;
+      margin: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .rsvp h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    input, select, textarea, button {
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #00a37a;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .gallery img {
+        width: 90%;
+      }
+
+      header h1 {
+        font-size: 32px;
+      }
+
+      .details h2 {
+        font-size: 24px;
+      }
+
+      .countdown {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Weekend Refresh</h1>
+    <p>You're invited to relax, vibe & chill with us 🍕🎧</p>
+  </header>
+
+  <img class="hero-img" src="https://media.istockphoto.com/id/2082192150/vector/neon-sign-karaoke-party-in-speech-bubble-frame-on-brick-wall-background-vector-light-banner.jpg?s=612x612&w=0&k=20&c=Z2U6JWHYlHqcNGP381US2b7-U1B4vfXoBMIR6AFuF14=" alt="Friends Enjoying Weekend" />
+
+  <section class="details">
+    <h2>Event Details</h2>
+    <p>📍 Location: Gardenglow Villa, Beach Road, Vizag</p>
+    <p>📅 Date: Saturday, August 10, 2025</p>
+    <p>🕓 Time: 3:00 PM till late night</p>
+    <p>🎧 Theme: Chill vibes, Music, Food & Fun</p>
+    <div class="countdown" id="countdown">Countdown: Loading...</div>
+  </section>
+
+  <section class="gallery">
+    <img src="https://media.istockphoto.com/id/536665840/photo/family-dinner.jpg?s=612x612&w=0&k=20&c=9dc8vWUoErfaxzTNqYt2T7sA5DyCRO5gRvF6pYU1LSI=" alt="Fun Image 1">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtkMYzefrqMnkNNhCgeylNbQFxszOPwcUwJw&s" alt="Fun Image 2">
+    <img src="https://media.istockphoto.com/id/1414872074/photo/friends-playing-guessing-game-at-home.jpg?s=612x612&w=0&k=20&c=zLC8VVb0etHghi0LZUGSK6s-DSl0ac6ZhRuN51AFQy4=" alt="Fun Image 3">
+  </section>
+
+  <section class="rsvp" id="rsvp">
+    <h2>Are you in the Weekend?</h2>
+    <form onsubmit="event.preventDefault(); alert('Thanks for RSVPing! See you there 🎉');">
+      <input type="text" placeholder="Your Full Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <select required>
+        <option value="">Are you coming?</option>
+        <option value="yes">Yes, I’m in!</option>
+        <option value="no">Sorry, can’t make it</option>
+      </select>
+      <textarea placeholder="Got any ideas or songs to bring?" rows="3"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <footer>
+    Let’s make this weekend unforgettable ✨<br>&copy; 2025 WeekendVibes
+  </footer>
+
+  <script>
+    const countdownEl = document.getElementById("countdown");
+    const eventDate = new Date("2025-08-10T15:00:00");
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = eventDate - now;
+
+      if (diff <= 0) {
+        countdownEl.innerText = "🎉 It's time to party!";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      countdownEl.innerText = `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+
+</body>
+</html>
